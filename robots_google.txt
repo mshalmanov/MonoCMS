@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /web_proj/index.html
+Allow: /dev_app/index.html
+Disallow: /assets/img/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /dev_app/img/
+Disallow: /web_proj/img/

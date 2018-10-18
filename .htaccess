@@ -1,0 +1,14 @@
+# Запрет на просмотр папок и файлов
+#deny from All
+
+# Скрываем отображение ошибок на странице
+php_flag display_errors off
+
+# Перенаправление на страницу 404.php
+ErrorDocument 404 /404.php
+
+# Скрыть расширение файла .php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
