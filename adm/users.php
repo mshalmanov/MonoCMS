@@ -131,7 +131,7 @@
 						<th>E-mail</th>
 					</tr>
 					</thead>
-					<?php showUsers($mysql_conn); ?>
+					<?php showUsers($db); ?>
 				</table>	
 				  
                 </div>

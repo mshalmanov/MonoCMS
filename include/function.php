@@ -16,18 +16,19 @@ function getCountryFromIP() {
 }
 
 //Вывод массива пользователей
-function showUsers($mysql_conn) {	
-	if ($result = mysqli_query($mysql_conn, "SELECT * FROM users")) {		
+function showUsers($db) {
+	if ($stmt = $db->prepare("SELECT * FROM users")) {		
+		$stmt->execute();		
 		
-		while ($row = mysqli_fetch_assoc($result)) {				 
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {			
 			print_r ("<tbody><tr>
 						<td>".$row['user_login']."</td>".
 					   "<td>".$row['user_password']."</td>".
-					   "<td>".$row['user_email']."</td>/<tr>
-					  </tbody>");
+					   "<td>".$row['user_email']."</td>".
+					   "<td><a href='#'>edit</a></td>".
+					   "<td><a href='#'>delete</a></td>/<tr>
+					  </tbody>");				
 		}
-		mysqli_free_result($result);
-		mysqli_close($mysql_conn);
-	} 
+	}
 }
 ?>

@@ -5,7 +5,7 @@
 
     session_start();
     include_once dirname(dirname(__FILE__)) . '/include/config.php';
-
+			
     //error_reporting(E_ALL);
     //ini_set('display_errors', 1);
 
@@ -14,26 +14,25 @@
     {
         header("location: dashboard.php");
         exit();
-    }
+    } 
     elseif ( isset($_POST['submit']) )
     {
-        $login = mysqli_real_escape_string ($mysql_conn, trim($_POST['username']) );
-
+        $login = trim($_POST['username']);
+					
         // Выводим из БД запись, у которой логин равен веденному
-        $query = mysqli_query($mysql_conn, "SELECT user_login, user_password FROM users WHERE user_login = '$login' ");
-        $data = mysqli_fetch_assoc($query);
-
+        $stmt = $db->prepare("SELECT user_login, user_password FROM users WHERE user_login = '$login'");        
+		$stmt->execute();
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		
         // Сравниваем пароли
-        if ($data['user_password'] == md5(trim($_POST['password'])) )
+        if ($row['user_password'] == md5(trim($_POST['password'])) )
         {
-            $_SESSION['user_login'] = $data['user_login'];
+            $_SESSION['user_login'] = $row['user_login'];
             header('Location: dashboard.php');
             exit();
         } else {
             $login_error = ('<h3 class= "alert alert-danger text-center">Не корректо введен логин или пароль!<h3>');
         }
-
-        mysqli_close($mysql_conn);
     }
 ?>
 <!DOCTYPE html>
