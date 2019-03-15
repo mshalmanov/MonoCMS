@@ -12,8 +12,8 @@
 define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT'].'/');
 
 /** Настройка соединение с БД через PDO **/
-$dsn = 'mysql:host=localhost;dbname=u772829079_mydb';
-$dbUser = 'u772829079_admin';
+$dsn = 'mysql:host=localhost;dbname=u275787326_mydb';
+$dbUser = 'u275787326_admin';
 $dbPass = 'NuC*7TkPUx';
 $dbCharset = 'utf8';
 
