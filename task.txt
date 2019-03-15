@@ -1,0 +1,104 @@
+Проект: Сайт портфолио (Кодовое имя проекта: MonoCMS)
+Автор: Шалманов Марат
+Лицензия: GNU GPL v3. https://ru.wikipedia.org/wiki/GNU_General_Public_License
+Ссылка на сайт: http://fi.pe.hu/
+Хранилище исходников: виртуальная машина develop, https://github.com/mshalmanov/MonoCMS/ (Под ?)
+
+	Описание
+Данный проект начал создовать в 2012 году. Идея проекта была в созданий сайта портфолио, а так же для получения практического опыта в разработке и в дальнейшем улучшений. 
+... Дописать
+
+	Структура проекта
+/ - Корневой путь проекта.
+/bootstrap/ - Папка для подключения файлов bootstrap.
+	/bootstrap/js/ - Папка для подключения JavaScript файлов bootstrap.
+		/bootstrap/js/bootstrap.min.js - Подключаемый JavaScript файл bootstrap.
+	/bootstrap/fonts/ - Папка для подключения файлов шрифтов glyphicons.
+		/bootstrap/fonts/glyphicons-halflings-regular.woff2 - 
+		/bootstrap/fonts/glyphicons-halflings-regular.woff -
+		/bootstrap/fonts/glyphicons-halflings-regular.ttf -
+		/bootstrap/fonts/glyphicons-halflings-regular.svg -
+		/bootstrap/fonts/glyphicons-halflings-regular.eot -	
+	/bootstrap/css - Папка для подключения файлов стилей.	
+		/bootstrap/css/bootstrap.min.css -	
+	/bootstrap/jquery.min.js -
+	..... Дописать	
+/adm - Папка для расположения панели управления сайтом.
+	/adm/css - Папка для расположения стилей.
+		/adm/css/style.css - Глвынй файл стилей панели управления сайтов.
+	/adm/img - Папка для расположения иконок и картинок.
+		/adm/img/logo.png - Логотип.
+	/adm/dashboard.php - Файл панели управления.
+	/adm/index.php - Главный файл панели управления.
+	/adm/exit.php - Функция выхода из панели управления и удаления сесии. (Создать функцию function exit( $_SESSION() ) и перенести в файл action.php).	
+	..... Дописать
+/include -	
+	/include/img -	
+	/include/config.php -
+	..... Дописать
+/web_proj -	
+	/web_proj/img -	
+		/web_proj/img/gourmetchocolate_kz.png -	
+		/web_proj/img/firstweb_ucoz_ru -			
+	/web_proj/index.php -	
+	/web_proj/portfolio-item.php -	
+	..... Дописать
+/dev_app -
+	/dev_app/img -
+		/dev_app/img/NotepadM.jpg -
+	/dev_app/index.php -
+	..... Дописать
+/assets
+	/assets/js - подключаемые библиотеки JavaScript.
+		/assets/js/lightbox.js - подключаемая библиотека JavaScript для FansyBox.
+	/assets/img - Папка для картинок и логотипа.
+		/assets/img/slider - папка с картинками слайдера на главной странице.
+			/assets/img/slider/prev.png - Иконка для пролистывания фотографии назад.
+			/assets/img/slider/next.png - Иконка для пролистывания фотографии вперед.
+			/assets/img/slider/close.png - Иконка для закрытия фотографии.
+			/assets/img/slider/loading.gif - Иконка информирующая загрузку фотографии.
+			/assets/img/slider/logo.png - Логтоип сайта.
+			/assets/img/slider/icon_top.png - Иконка для пролистывания страницы вверх.
+			/assets/img/slider/Marat.jpg - Фотография автора.
+		/assets/css - Папка где хранятся файлы стилей.
+			/assets/css/style.css -
+			/assets/css/lightbox.min.css -
+	captcha/ - Папка для хранения библиотеки captcha.
+		captcha/images - Папка с картинками проверочных цифр в captcha.
+		captcha.captcha.php - Подключаемый файл captcha.	
+	..... Дописать
+/footer.php - 
+/.htaccess - 
+/header.php -
+/404.php - Страница ошибки.
+/contact.php - Форма обратной связи.
+/about.php - 
+/index.php - Главный файл сайта.
+/sitemap.xml -
+/robots.txt -
+/robots_google.txt -
+/favicon.png - иконта отображаемая в заголовке браузера.
+.... Дописать
+
+	Используемые компоненты и библиотеки
+1. Bootstrap /bootstrap/*.
+2. JQuery. /bootstrap/jquery.min.js.
+3. MySQL.
+4. PHP 5.6, 7.0.
+5. CSS 3.0.
+
+	Компоненты которые нужно использовать
+1. FastRoute (https://github.com/nikic/FastRoute)	
+
+	Проделанные задачи
+1. Подключить фотогалерею сертификатов (выполнил на странице /about.php 30.12.16).
+2. Обновил плагин jquery.min.js до версии 3.2.1 в папке /bootstrap/jquery.min.js. (выполнил 17.04.2017).
+3. Изменен внешний вид файла contact.php, подключена captcha в папке captcha/captcha.php (выполнил 18.12.2017)
+4. Подключен файл validator.php к файлу contact.php, для проверки введенных данных в форме обратной связи (выполнил 18.12.2017)
+5. Добавил возможность определение старны, города по IP адрессу на странице contact.php с отправкой этих данных на почту (23.12.2017) 
+6. Добавлена страница вывода всех пользователей в панели управления adm/users.php (24.03.2018)
+7. Изменен метод подключения к базе с mysqli на PDO (15.03.2019)
+
+	Заплонированные задачи
+1. Продумать и спроектировать панель управления сайтом, которая находиться в папке /adm.
+2. Продумать форму и обработку загрузки изображений в папку upload.
