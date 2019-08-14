@@ -1,0 +1,10 @@
+{
+	"config": {
+		"vendor-dir": "lib"
+	},
+	
+    "require": {
+        "nikic/fast-route": "^1.3",
+		"smarty/smarty": "^3.1"		
+    }
+}
