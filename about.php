@@ -47,6 +47,9 @@
             <div class="col-md-2 col-sm-4 col-xs-7">
                 <a class="example-image-link" href="include/img/Introduction_into_HTML_RUS.gif" data-lightbox="example-set" data-title="Сертификат по технологий HTML на русском"><img class="example-image" src="include/img/Introduction_into_HTML_RUS.gif" width="180px" height="267px" /></a>
             </div>
+			<div class="col-md-2 col-sm-4 col-xs-7">
+                <a class="example-image-link" href="include/img/Introduction_into_HTML_ENG.gif" data-lightbox="example-set" data-title="Сертификат по технологий HTML на английском"><img class="example-image" src="include/img/Introduction_into_HTML_ENG.gif" width="180px" height="267px" /></a>
+            </div>
             <div class="col-md-2 col-sm-4 col-xs-7">
                 <a class="example-image-link" href="include/img/Udemy_HTMLandCSS.jpg" data-lightbox="example-set" data-title="Сертификат по технологий HTML CSS"><img class="example-image" src="include/img/Udemy_HTMLandCSS.jpg" width="180px" height="127px" /></a>
             </div>
@@ -59,8 +62,11 @@
             <div class="col-md-2 col-sm-4 col-xs-7">
                 <a class="example-image-link" href="include/img/Time_Management.jpg" data-lightbox="example-set" data-title="Сертификат по управлению временем"><img class="example-image" src="include/img/Time_Management.jpg" width="180px" height="127px" /></a>
             </div>
-            <div class="col-md-2 col-sm-4 col-xs-7">
-                <a class="example-image-link" href="include/img/Introduction_into_HTML_ENG.gif" data-lightbox="example-set" data-title="Сертификат по технологий HTML на английском"><img class="example-image" src="include/img/Introduction_into_HTML_ENG.gif" width="180px" height="267px" /></a>
+			<div class="col-md-2 col-sm-4 col-xs-7"> 
+                <a class="example-image-link" href="include/img/lanit_LandocsAdmin.jpg" data-lightbox="example-set" data-title="Сертификат по администрированию СЭД LanDocs"><img class="example-image" src="include/img/lanit_LandocsAdmin.jpg" width="180px" height="127px" /></a>
+            </div>			
+			<div class="col-md-2 col-sm-4 col-xs-7"> 
+                <a class="example-image-link" href="include/img/documentolog.png" data-lightbox="example-set" data-title="Сертификат по СЭД Documentolog"><img class="example-image" src="include/img/documentolog.png" width="180px" height="127px" /></a>
             </div>
         </div>
         <!-- /.row -->
