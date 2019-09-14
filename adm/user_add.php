@@ -58,24 +58,24 @@
               </div>
 
               <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt=""><?php echo $_SESSION['user_login']; ?>
-                    <span class=" fa fa-angle-down"></span>
+                <li>
+                  <a href="#" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="img/logo.svg" alt=""><?php echo $_SESSION['user_login']; ?>
+                    <span class="fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
+                    <li><a href="#">Profile</a></li>
                     <li>
-                      <a href="javascript:;">
+                      <a href="#">
                         <span>Settings</span>
                       </a>
                     </li>
-                    <li><a href="exit.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="exit.php"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
                   </ul>
                 </li>
 
                 <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                  <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-envelope-o"></i>
                     <span class="badge bg-green">2</span>
                   </a>
