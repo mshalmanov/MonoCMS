@@ -28,7 +28,7 @@
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-3">
-                <img class="img-responsive" src="assets/img/Marat.jpg" alt="">
+                <img class="img-circle center-block" src="assets/img/Marat.jpg" alt="">
             </div>
             <div class="col-md-0">
                 <h2 class="text-center">Здравствуйте, уважаемые посетители!</h2>
