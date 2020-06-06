@@ -1,7 +1,10 @@
 <?php
 /**
 * Выход из панели управления
-*/
+ *
+ * Marat Shalmanov <1203Marat@gmail.com>
+ * Copyright (c) 2016 - 2017
+ */
 
 error_reporting(E_ALL);
 ini_set ('display_errors', 1);
@@ -13,10 +16,4 @@ if (session_id() != "" || isset ($_COOKIE[session_name()]))
 session_destroy();
 header("location: /index.php");
 
-/*
-session_start();
-unset ($_SESSION['logSESS']);
-session_destroy();
-header("Location: /index.php");
-exit(); */
 ?>

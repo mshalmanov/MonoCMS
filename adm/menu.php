@@ -13,15 +13,6 @@
 		  </li>                  
 		</ul>
 	  </div>
-	  <div class="menu_section">
-		<h3>Live On</h3>
-		<ul class="nav side-menu">
-			<li><a><i class="fa fa-sliders"></i> Options <span class="fa fa-chevron-down"></span></a>
-				<ul class="nav child_menu">
-					<li><a href="options-general.php">General</a></li>
-				</ul>
-			</li>
-		</ul>
-	  </div>
+
 	</div>
  <!-- /sidebar menu -->

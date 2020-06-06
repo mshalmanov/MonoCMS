@@ -6,14 +6,20 @@
  * Copyright (c) 2016 - 2018
  * 
  **/
+
+session_start();
  
 //Подключение шапки
 include_once "header.php";
 require_once 'include/function.php';
+<<<<<<< HEAD
+require_once 'include/validator.php';
+=======
 
 session_start();
 
 require_once 'lib/validator.php';
+>>>>>>> parent of 98cd55f... Little change
 
 $validator = new Validator();
 $validator->set_error_delimiters('<div class="error">', '</div>');

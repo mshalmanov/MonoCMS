@@ -46,7 +46,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li>
                   <a href="#" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="img/logo.svg" alt=""><?php echo $_SESSION['user_login']; ?>
+                    <img src="img/avatar.png" alt=""><?php echo $_SESSION['user_login']; ?>
                     <span class="fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -121,18 +121,31 @@
                   </ul>
                   <div class="clearfix"></div>
                 </div>
-                <div class="x_content">                
-                  
-				  <table class="table">
-					<thead>
-					<tr>
-						<th>Логин</th>
-						<th>Пароль</th>
-						<th>E-mail</th>
-					</tr>
-					</thead>
-					<?php showUsers($db); ?>
-				</table>	
+                <div class="x_content">
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Логин</th>
+                        <th>E-mail</th>
+                    </tr>
+                    </thead>
+                    <?php //showUsers($mysql_conn);
+                    $stmt = $db->query("SELECT * FROM users");
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <tr><td><input type='checkbox' class='checkbox' name='check_user'></td>
+                            <td><?= $row['user_login']; ?></td>
+                            <td><?=$row['user_email']; ?></td>
+                            <td><a href="edit.php?id=<?php echo $row['id'] ?>">редактировать</a></td>
+                            <td><a href="delete.php?id=<?php echo $row['id']; ?>">удалить</a></td>
+                        </tr>
+                        <?php
+                    }
+                    $stmt = null;
+                    ?>
+                </table>
 				  
                 </div>
               </div>

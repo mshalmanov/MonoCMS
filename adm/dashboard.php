@@ -1,4 +1,13 @@
 <?php
+/*
+ * dashboard.php
+ *
+ * Панель администратора.
+ *
+ * Marat Shalmanov <1203Marat@gmail.com>
+ * Copyright (c) 2016 - 2017
+ */
+
     session_start();
 
     if (!isset($_SESSION['user_login']))
@@ -44,7 +53,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt=""><?php echo $_SESSION['user_login']; ?>
+                    <img src="img/avatar.png" alt=""><?php echo $_SESSION['user_login']; ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

@@ -11,7 +11,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12 text-center lead">
-					<p><a href="index.php">Персональный сайт-портфолио</a> 2011 - <?php echo date('Y'); ?> .г</p>
+					<p><a href="/">Персональный сайт-портфолио</a> 2011 - <?php echo date('Y'); ?> .г</p>
                 </div>
             </div>
         </footer>

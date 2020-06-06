@@ -1,6 +1,9 @@
 <?php
 /**
  * Форма авторизаций
+ *
+ * Marat Shalmanov <1203Marat@gmail.com>
+ * Copyright (c) 2016 - 2017
  */
 
     session_start();
@@ -8,7 +11,7 @@
 			
     //error_reporting(E_ALL);
     //ini_set('display_errors', 1);
-
+	
     //Проверка на авторизацию пользователя
     if (isset($_SESSION['user_login']))
     {
@@ -17,17 +20,19 @@
     } 
     elseif ( isset($_POST['submit']) )
     {
-        $login = trim($_POST['username']);
+        //$login = trim($_POST['username']);
+        $login = trim($_POST['email']);
 					
         // Выводим из БД запись, у которой логин равен веденному
-        $stmt = $db->prepare("SELECT user_login, user_password FROM users WHERE user_login = '$login'");        
+        $stmt = $db->prepare("SELECT user_email, user_password FROM users WHERE user_email = '$login'");        
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
         // Сравниваем пароли
         if ($row['user_password'] == md5(trim($_POST['password'])) )
         {
-            $_SESSION['user_login'] = $row['user_login'];
+            //$_SESSION['user_login'] = $row['user_login'];
+            $_SESSION['user_login'] = $row['user_email'];
             header('Location: dashboard.php');
             exit();
         } else {
@@ -70,12 +75,13 @@
         <h1 align = "center">Форма входа</h1>		
         <form action="index.php" method="post" class="well">
             <?php echo $login_error; ?>
-            <div class="form-group">
+			<div class="form-group">
                 <div class="input-group mb-2 mb-sm-0">
                     <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                    <input type="text" class="form-control" id="inlineFormInputGroup" name="username" placeholder="Логин">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" name="email" placeholder="Логин">
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="input-group mb-2 mb-sm-0">
                     <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>

@@ -57,32 +57,19 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Портфолио <b class="caret"></b></a>
                         <ul class="dropdown-menu">                            
                              <li>
-                                <a href="web_proj/index">Web-проекты</a>
+                                <a href="web_proj/index.php">Web-проекты</a>
                             </li>
 							<li>
-                                <a href="dev_app/index">Разработка приложений</a>
+                                <a href="dev_app/index.php">Разработка приложений</a>
                             </li>		
                         </ul>
                     </li>
-                    <!--<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.php">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.php">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.php">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li> -->                    
+                    
 					<li>
-                        <a href="about">Об авторе</a>
+                        <a href="about.php">Об авторе</a>
                     </li>
 					<li>
-                        <a href="contact">Контакты</a>
+                        <a href="contact.php">Контакты</a>
                     </li>
                 </ul>
             </div>
