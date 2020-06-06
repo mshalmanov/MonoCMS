@@ -14,21 +14,4 @@ function getCountryFromIP() {
     $getCountryParse = json_decode ($getCountry);
     return $getCountryParse;
 }
-
-//Вывод массива пользователей
-function showUsers($db) {
-	if ($stmt = $db->prepare("SELECT * FROM users")) {		
-		$stmt->execute();		
-		
-		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {			
-			print_r ("<tbody><tr>
-						<td>".$row['user_login']."</td>".
-					   "<td>".$row['user_password']."</td>".
-					   "<td>".$row['user_email']."</td>".
-					   "<td><a href='#'>edit</a></td>".
-					   "<td><a href='#'>delete</a></td>/<tr>
-					  </tbody>");				
-		}
-	}
-}
 ?>
