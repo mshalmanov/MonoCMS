@@ -1,4 +1,4 @@
-Проект: Сайт портфолио (Кодовое имя проекта: MonoCMS)
+﻿Проект: Сайт портфолио (Кодовое имя проекта: MonoCMS)
 Автор: Шалманов Марат
 Лицензия: GNU GPL v3. https://ru.wikipedia.org/wiki/GNU_General_Public_License
 Ссылка на сайт: http://fi.pe.hu/
@@ -81,14 +81,19 @@
 .... Дописать
 
 	Используемые компоненты и библиотеки
-1. Bootstrap /bootstrap/*.
-2. JQuery. /bootstrap/jquery.min.js.
-3. MySQL.
-4. PHP 5.6, 7.0.
-5. CSS 3.0.
+1. Bootstrap 3.3.7 /bootstrap/*.
+2. JQuery 3.2.1 /bootstrap/jquery.min.js.
+3. Mariadb  
+4. PHP 5.6, 7.0 
+5. CSS 3.0      /assets/css/*
 
 	Компоненты которые нужно использовать
-1. FastRoute (https://github.com/nikic/FastRoute)	
+1. FastRoute - маршрутизатор(https://github.com/nikic/FastRoute)
+2. PhpMain	 - отправка почты ()
+3. Twich     - шаблонизатор ()	
+4. Monolog   - логирование в файл ()
+5. PHPUnit   - написание модульных тестов () 
+
 
 	Проделанные задачи
 1. Подключить фотогалерею сертификатов (выполнил на странице /about.php 30.12.16).
@@ -102,3 +107,4 @@
 	Заплонированные задачи
 1. Продумать и спроектировать панель управления сайтом, которая находиться в папке /adm.
 2. Продумать форму и обработку загрузки изображений в папку upload.
+3. Написать систему маршрутизации (routing) и взять готовую библиотеку FastRoute
