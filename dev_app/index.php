@@ -18,7 +18,7 @@
 	<link rel="shortcut icon" href="../favicon.png"/>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -174,10 +174,10 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="../bootstrap/jquery.min.js"></script>
+    <script src="../assets/bootstrap/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>

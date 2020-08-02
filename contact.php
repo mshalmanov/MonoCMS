@@ -12,14 +12,7 @@ session_start();
 //Подключение шапки
 include_once "header.php";
 require_once 'include/function.php';
-<<<<<<< HEAD
 require_once 'include/validator.php';
-=======
-
-session_start();
-
-require_once 'lib/validator.php';
->>>>>>> parent of 98cd55f... Little change
 
 $validator = new Validator();
 $validator->set_error_delimiters('<div class="error">', '</div>');
@@ -149,7 +142,7 @@ else{
 			</div>     
 			<div <?=(!empty($errors['keystring']))? 'class="error_field"': '';?>>
 				<label class="captcha">Введите цифры изображенные на картинке:</label>
-				<div class="capth_images"><?php require 'lib/captcha/captcha.php';?></div>
+				<div class="capth_images"><?php require 'include/captcha/captcha.php';?></div>
 				<input type="text" class = "captchaText" name="keystring" maxlength="5"/>
 			</div> 
 			<div>    	

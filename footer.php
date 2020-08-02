@@ -20,11 +20,11 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="bootstrap/jquery.min.js"></script>
+    <script src="assets/bootstrap/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-	
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
 	<!-- прокрутка вверх -->
 	<script type="text/javascript">
 	$(document).ready(function(){ 

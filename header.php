@@ -22,7 +22,7 @@
 	<link rel="shortcut icon" href="favicon.png"/>
 
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">

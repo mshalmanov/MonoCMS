@@ -19,13 +19,13 @@
     <title>Персональный сайт портфолио</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../assets/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../font_awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/bootstrap/font_awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -188,10 +188,10 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="../bootstrap/jquery.js"></script>
+    <script src="../assets/bootstrap/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>
