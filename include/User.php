@@ -9,5 +9,18 @@
 
 class User
 {
+    //показать пользователей
+    public function users() {
 
+    }
+
+    //добавление пользователя
+    public function userAdd() {
+
+    }
+
+    //удалить пользователя
+    public function userDell() {
+
+    }
 }
