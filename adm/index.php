@@ -28,6 +28,31 @@
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
+        // Сравниваем пароли		
+		if (password_verify( trim($_POST['password']), $row['user_password'])) {
+			$_SESSION['user_login'] = $row['user_email'];
+            header('Location: dashboard.php');
+            exit();
+		} else {
+			echo $login_error = ('<h3 class= "alert alert-danger text-center">Не корректо введен логин или пароль!<h3>');			 
+		}    
+    }
+	
+	if (isset($_SESSION['user_login']))
+    {
+        header("location: dashboard.php");
+        exit();
+    } 
+    elseif ( isset($_POST['submit']) )
+    {
+        //$login = trim($_POST['username']);
+        $login = trim($_POST['email']);
+					
+        // Выводим из БД запись, у которой логин равен веденному
+        $stmt = $db->prepare("SELECT user_email, user_password FROM users WHERE user_email = '$login'");        
+		$stmt->execute();
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		
         // Сравниваем пароли
         if ($row['user_password'] == md5(trim($_POST['password'])) )
         {
@@ -55,7 +80,7 @@
 	<link rel="shortcut icon" href="../favicon.png"/>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">

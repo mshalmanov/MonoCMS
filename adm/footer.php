@@ -10,9 +10,9 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../bootstrap/jquery.min.js"></script>
+    <script src="../assets/bootstrap/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- bootstrap-progressbar -->
     <script src="js/bootstrap-progressbar.min.js"></script>
     <!-- Flot -->

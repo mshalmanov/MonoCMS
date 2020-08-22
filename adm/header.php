@@ -10,11 +10,11 @@
     <title>Панель администратора</title>
 
     <!-- Bootstrap -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="../assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
     <link href="css/bootstrap-progressbar.min.css" rel="stylesheet">

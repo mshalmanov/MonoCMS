@@ -8,8 +8,7 @@
 	$file_types = array('image/gif', 'image/png', 'image/jpeg');
 	
 	if( isset($_POST['submit']))
-	{        
-		
+	{       		
 		
 		if (copy($_FILES['upload_file']['tmp_name'], $uloaddir . $_FILES['upload_file']['name'])) {
 			echo 'Uploading';
