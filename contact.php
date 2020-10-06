@@ -105,21 +105,18 @@ else{
 	$errors = $validator->get_array_errors();
 }
 ?>
-    <div class="container">
+<!-- .container -->
+<div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <div class="row">
-        <div class="col-lg-12"></br>
-            <ol class="breadcrumb">
-                <li><a href="index.php">Главная</a>
-                </li>
-                <li class="active">Контакты</li>
-            </ol>
-        </div>
-    </div>
-    <!-- /.row -->
+	<nav aria-label="breadcrumb"><br>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Об авторе</li>
+		</ol>
+	</nav>
 	
-	<div class="col-md-8 well">
+	<div class="col-md-8 jumbotron">
 		<h3>Контакты</h3>
 
 	    <?=(!empty($message))? '<div class="errors">'.$message.'</div>': ''?>
@@ -150,6 +147,8 @@ else{
 			</div>	
 		</form>
 	</div>
+</div>
+<!-- .container -->
 <?php
 //Подключение подвала
 include_once "footer.php";

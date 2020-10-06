@@ -3,7 +3,57 @@
  * Copyright 2013-2016 Start Bootstrap
  */
 
- 
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&subset=cyrillic');
+
+/* Global Styles */
+html, body {
+    height: 100%;
+}
+
+.main {
+	min-height: 100%;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	color: unset;
+	text-decoration: underline;
+}
+
+.navbar-brand {
+	padding: 5px 5px;
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* ScrullUp */
+.scrollup {
+  bottom: 0;
+  cursor: pointer;
+  display: none;  
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  background-image: url(/assets/img/icon_top.png);
+  right: 0;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+/* 404 Page Styles */
+.error-404 {
+    font-size: 100px;
+}
+
 /*Hover Fall Effect*/
     .fall-item {
        width: 100%;
@@ -12,6 +62,7 @@
        position: relative;
        text-align: center;
     }
+	
     .fall-item .mask,.fall-item .content {
        width: 100%;
        height: 100%;
@@ -20,6 +71,7 @@
        top: 0;
        left: 0;
     }
+	
     .fall-item img {
        display: block;
        position: relative;
@@ -35,6 +87,7 @@
        background: rgba(0, 0, 0, 0.8);
        margin: 0 0 0 0;
     }
+	
     .fall-item p {
        #font-style: italic;
        position: relative;
@@ -42,6 +95,7 @@
        padding: 10px 20px 20px;
        text-align: center;
     }
+	
     .fall-effect .mask {
        background-color: rgba(255, 255, 255, 0.7);
        top: -200px;
@@ -54,6 +108,7 @@
        -ms-transition: all 0.3s ease-out 0.5s;
        transition: all 0.3s ease-out 0.5s;
     }
+	
     .fall-effect h2 {
        -webkit-transform: translateY(-200px);
        -moz-transform: translateY(-200px);
@@ -66,6 +121,7 @@
        -ms-transition: all 0.2s ease-in-out 0.1s;
        transition: all 0.2s ease-in-out 0.1s;
     }
+	
     .fall-effect p {
        color: #333;
        -webkit-transform: translateY(-200px);
@@ -79,6 +135,7 @@
        -ms-transition: all 0.2s ease-in-out 0.2s;
        transition: all 0.2s ease-in-out 0.2s;
     }
+	
     .fall-effect a.btn {
        -webkit-transform: translateY(-200px);
        -moz-transform: translateY(-200px);
@@ -91,6 +148,7 @@
        -ms-transition: all 0.2s ease-in-out 0.3s;
        transition: all 0.2s ease-in-out 0.3s;
     }
+	
     .fall-effect:hover .mask {
        -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
        filter: alpha(opacity=100);
@@ -115,6 +173,7 @@
        -ms-transition-delay: 0.4s;
        transition-delay: 0.4s;
     }
+	
     .fall-effect:hover p {
        -webkit-transform: translateY(0px);
        -moz-transform: translateY(0px);
@@ -127,6 +186,7 @@
        -ms-transition-delay: 0.2s;
        transition-delay: 0.2s;
     }
+	
     .fall-effect:hover a.btn {
        -webkit-transform: translateY(0px);
        -moz-transform: translateY(0px);
@@ -140,8 +200,8 @@
        transition-delay: 0s;
     } 
 /*Hover Fall Effect*/
-	
-/* Feedback_form */ 
+
+/* Feedback_form */
 form.form{    
     margin: 0 auto;
 }
@@ -155,7 +215,7 @@ form.form div {
 form.form input.text,
 .textarea, .captchaText {
     padding:5px 10px;    
-    border:1px solid #ddd;
+    border:1px solid #cebebe;
     color:#333;    
     position:relative;
     z-index:2;
@@ -190,7 +250,7 @@ form.form .textarea {
 -moz-border-radius:8px;
 -webkit-border-radius:8px;
 /* border-radius:8px; */
-} 
+}
 
 div.error_field{
     background: #FEDAFB;
@@ -220,113 +280,14 @@ div.errors .success{
 }
 /* -Feedback_form- */ 
 
- 
-/* Global Styles */
-html,
-body {
-    height: 100%;
-}
-
-body {
-    padding-top: 50px;
-}
-
-.navbar_fixed {
-   position: fixed !important;
-   top: 0 !important;
-   margin-left: -100%;
-   padding-left: 100%;
-   background: rgba(255, 0, 0, 0.1);
-}
-
-.navbar-brand {
-	padding: 5px 5px;
-}
-
-.img-portfolio {
-    margin-bottom: 30px;
-}
-
-.img-hover:hover {
-    opacity: 0.8;
-}
-
-/* ScrullUp */
-.scrollup {
-  bottom: 0;
-  cursor: pointer;
-  display: none;  
-  position: fixed;
-  height: 40px;
-  width: 40px;
-  background-image: url(/assets/img/icon_top.png);
-  right: 0;
-  margin-right: 50px;
-  margin-bottom: 50px;
-}
-
-/* Home Page Carousel */
-
-header.carousel {
-    height: 80%;
-}
-
-header.carousel .item,
-header.carousel .item.active,
-header.carousel .carousel-inner {
-    height: 100%;
-}
-
-header.carousel .fill {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-}
-
-/* 404 Page Styles */
-
-.error-404 {
-    font-size: 100px;
-}
-
-/* Pricing Page Styles */
-
-.price {
-    display: block;
-    font-size: 50px;
-    line-height: 50px;
-}
-
-.price sup {
-    top: -20px;
-    left: 2px;
-    font-size: 20px;
-}
-
-.period {
-    display: block;
-    font-style: italic;
-}
-
 /* Footer Styles */
-
-
-/* Responsive Styles */
-
-@media(max-width:991px) {
-    .customer-img,
-    .img-related {
-        margin-bottom: 30px;
-    }
+footer {
+	background-color: #343a40;
 }
 
-@media(max-width:767px) {
-    .img-portfolio {
-        margin-bottom: 15px;
-    }
-
-    header.carousel .carousel {
-        height: 70%;
-    }
+footer p, footer a{
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
 }
+
+/* Effect example */

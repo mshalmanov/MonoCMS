@@ -1,8 +1,9 @@
-# Запрет на просмотр папок и файлов
-#deny from All
-
+Header always set Content-Security-Policy: upgrade-insecure-requests
 # Скрываем отображение ошибок на странице
 php_flag display_errors off
+
+# Запред на просмотр каталогов
+Options All -Indexes
 
 # Перенаправление на страницу 404.php
 ErrorDocument 404 /404.php
@@ -12,3 +13,14 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:filive.tech
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} (www\.)?filive.tech
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:filive.tech
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW UPGRADE_INSECURE_REQUESTS:filive.tech
+Header always set Content-Security-Policy: upgrade-insecure-requests
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW UPGRADE_INSECURE_REQUESTS:filive.tech
+
