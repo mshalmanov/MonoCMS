@@ -36,7 +36,7 @@
 		} else {
 			echo $login_error = ('<h3 class= "alert alert-danger text-center">Не корректо введен логин или пароль!<h3>');			 
 		}    
-    }
+    }	
 	
 	if (isset($_SESSION['user_login']))
     {
@@ -79,9 +79,9 @@
 	<!-- favicon -->
 	<link rel="shortcut icon" href="../favicon.png"/>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Bootstrap CSS -->    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -95,29 +95,30 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container d-flex h-100 justify-content-center align-items-center">	
     <div class="row">
-        <h1 align = "center">Форма входа</h1>		
-        <form action="index.php" method="post" class="well">
-            <?php echo $login_error; ?>
-			<div class="form-group">
-                <div class="input-group mb-2 mb-sm-0">
-                    <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                    <input type="text" class="form-control" id="inlineFormInputGroup" name="email" placeholder="Логин">
-                </div>
-            </div>
+		<div class="col border rounded">
+			<h1 class="text-center">Форма входа</h1>	
+			<form action="index.php" method="post">
+				<?php echo $login_error; ?>
+				<div class="form-group">
+					<div class="input-group mb-2 mb-sm-0">                    
+						<input type="text" class="form-control" id="inlineFormInputGroup" name="email" placeholder="Логин">
+					</div>
+				</div>
 
-            <div class="form-group">
-                <div class="input-group mb-2 mb-sm-0">
-                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                    <input type="password" class="form-control" name="password" placeholder="Пароль">
-                </div>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary btn-block" name="submit">Войти</button>
-            </div>
-        </form>
-    </div>
+				<div class="form-group">
+					<div class="input-group mb-2 mb-sm-0">                    
+						<input type="password" class="form-control" name="password" placeholder="Пароль">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<button class="btn btn-primary btn-block" name="submit">Войти</button>
+				</div>
+			</form>	
+		</div>	
+   </div> 
 </div>
 
 </body>

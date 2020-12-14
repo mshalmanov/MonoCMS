@@ -1,24 +1,13 @@
 /**
-* stule.css
+* style.css
 * 
 * Стили для панели администратора
 * 
 * Created by Marat Shalmanov <1203Marat@gmail.com>
-* Copyright (c) 2016 - 2018
+* Copyright (c) 2016 - 2020
 **/
 
 /* Форма входа */
-.container {
-	margin-right: auto;
-	margin-left: auto;
-	max-width: 460px;	
-}
-
-.row {
-	margin-top: 100px;
-	margin-bottom: 100px;
-}
-
 .navbar{
 	min-height: 0;
 	border-radius: 0px;
