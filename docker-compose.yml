@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+    nginx:
+     image: nginx:mainline-alpine
+     container_name: nginx
+     ports:
+        - "80:80"
+        - "443:443"
+     volumes:
+        - ./docker_deploy/log/nginx:/var/log/nginx/
+        - .:/var/www/html/
+        - ./docker_deploy/nginx/default.conf:/etc/nginx/conf.d/default.conf
+     
+     links:
+        - php
+     #command: [nginx-debug, '-g', 'daemon off;']    
+    
+    php:
+     build: ./docker_deploy/php
+     #image: php:7.3-fpm
+     container_name: php
+     volumes:
+        - .:/var/www/html/
+        - ./docker_deploy/log/php:/var/log/php/
+        
+     links:
+         - mysql
+         
+    mysql:        
+        image: mysql:latest
+        container_name: mysql
+        ports:
+           - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=
+            - MYSQL_USER=
+            - MYSQL_PASSWORD=
+        volumes:
+            - ./docker_deploy/mysql/data:/var/lib/mysql
+            - ./docker_deploy/log/mysql:/var/log/mysql/
