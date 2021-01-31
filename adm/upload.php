@@ -1,34 +1,34 @@
 <?php
-	
 	// Выводить все ошибки
 	ini_set ('error_reporting', E_ALL);
-	
-	$uloaddir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/';
-	
-	$file_types = array('image/gif', 'image/png', 'image/jpeg');
+	$title = "Загрузка файла";
+
+    $uloadDir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/';
+	$fileTypes = array('image/gif', 'image/png', 'image/jpeg');
+	$uploadFileSize = 204800; // 200 КБ
 	
 	if( isset($_POST['submit']))
 	{       		
-		
-		if (copy($_FILES['upload_file']['tmp_name'], $uloaddir . $_FILES['upload_file']['name'])) {
-			echo 'Uploading';
-		} else {
-			echo 'Not uploading';
+		if (!in_array($_FILES['upload_file']['type'], $fileTypes)) {
+            die('Запрещённый тип файла. <a href="?">Попробовать другой файл?</a>');
+        }
+
+        if ($_FILES['upload_file']['size'] > $uploadFileSize) {
+            die('Слишком большой размер файла. <a href="?">Попробовать другой файл?</a>');
 		}
-		
-		/*if ((!$_FILES['upload_file']['size'])) {
-			echo 'Выберите файл для загрузки';
+
+		if (copy($_FILES['upload_file']['tmp_name'], $uloadDir . $_FILES['upload_file']['name'])) {
+			echo 'Файл загружен';
+            //$uploading_file = $_SERVER['HTTP_HOST'].'/uploads/'.$_FILES['upload_file']['name'];
+            //echo "<p><img src ='$uploading_file' width='10%' height='25%'></p>";
 		} else {
-			var_dump ($_FILES['upload_file']);
-			copy($_FILES['upload_file']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/uploads/' . basename($_FILES['upload_file']['name']));
-			$uploading_file = $_SERVER['HTTP_HOST'].'/uploads/'.$_FILES['upload_file']['name'];
-			echo "<p><img src ='$uploading_file' width='10%' height='25%'></p>";
-		}*/
+			echo 'Ошибка загрузки';
+		}
 	}
 ?>
-<title>Загрузка файла</title>
-<p align='center'>Загрузка файла</p>
-<form action="" method="POST" enctype="multipart/form-data">
-Выберите файл для загрузки:<input type="file" name="upload_file">
-    <input type="submit" name="submit" value="Загрузить файл">
-</form>
+<title><?php echo $title; ?></title>
+    <p align='center'><?php echo $title; ?></p>
+    <form action="" method="POST" enctype="multipart/form-data">
+        Выберите файл для загрузки: <input type="file" name="upload_file">
+        <input type="submit" name="submit" value="Загрузить файл">
+    </form>

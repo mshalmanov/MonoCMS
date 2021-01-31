@@ -1,20 +1,16 @@
 <?php 
 
-class Validator{
+class validator{
 	
 	private $_field_data = array();
 	private $_error_messages = array();
 	private $_error_prefix	= '<p>';
 	private $_error_suffix	= '</p>';
-		
-	/* function __construct(){
-		
-	} */	
 	
 	/**
 	 * Установка полей валидации
 	 */
-	function set_rules($field, $label = '', $rules = ''){		
+	function set_rules($field, $label = '', $rules = ''){
 		//Нет POST данных
 		if (sizeof($_POST) == 0){			
 			return;
@@ -25,7 +21,7 @@ class Validator{
 			foreach ($field as $row){				
 				//Если не установлено поле валидации или правила валидации,
 				//то пропускаем это поле
-				if ( ! isset($row['field']) OR ! isset($row['rules'])){					
+				if ( ! isset($row['field']) OR ! isset($row['rules'])){
 					continue;
 				}
 				//Если название поля не передано используем имя поля
@@ -58,7 +54,7 @@ class Validator{
 	 */
 	function run(){		
 		//Нет POST данных
-		if (sizeof($_POST) == 0){			
+		if (sizeof($_POST) == 0) {
 			return FALSE;
 		}
 		
@@ -69,14 +65,14 @@ class Validator{
 
 		foreach ($this->_field_data as $field => $row){
 			//Получаем POST данные для установленных полей валидации
-			//if (isset($_POST[$field])){				
+			//if (isset($_POST[$field])){
 				$this->_field_data[$field]['postdata'] = (isset($_POST[$field]))? $_POST[$field]: NULL;                
                 //Проверка правил валидации
                 $this->checkrule($row,$this->_field_data[$field]['postdata']);
-			//}	
+			//}
 		}		
 		
-		$total_errors = sizeof($this->_error_messages);		
+		$total_errors = sizeof($this->_error_messages);
 		
 		if($total_errors == 0){			
 			return TRUE;
@@ -150,8 +146,8 @@ class Validator{
 	/**
 	 * Установка POST данных
 	 */
-	private function set_field_postdata($field,$postdata){
-		if(isset($this->_field_data[$field]['postdata'])){			
+	private function set_field_postdata($field,$postdata) {
+		if(isset($this->_field_data[$field]['postdata'])) {
 			$this->_field_data[$field]['postdata'] = $postdata;
 		}	
 	}	
@@ -160,8 +156,9 @@ class Validator{
 	 * Возвращает POST данные для нужного элемента
 	 */
 	function postdata($field){		
-		if(isset($this->_field_data[$field]['postdata'])){			
-			return $this->_field_data[$field]['postdata'];		}
+		if(isset($this->_field_data[$field]['postdata'])) {
+			return $this->_field_data[$field]['postdata'];
+		}
 		else return FALSE;
 	}	
 	
@@ -175,7 +172,7 @@ class Validator{
 	/** 
 	 * Возвращает все сообщения об ошибках в виде строки
 	 */
-	function get_string_errors($prefix = '',$suffix = ''){		
+	function get_string_errors($prefix = '',$suffix = '') {
 		if (count($this->_error_messages) === 0){			
 			return '';
 		}

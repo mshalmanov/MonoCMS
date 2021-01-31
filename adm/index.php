@@ -7,7 +7,7 @@
  */
 
     session_start();
-    include_once dirname(dirname(__FILE__)) . '/include/config.php';
+    include_once dirname(dirname(__FILE__)) . '/include/config.php';	
 			
     //error_reporting(E_ALL);
     //ini_set('display_errors', 1);
@@ -19,8 +19,7 @@
         exit();
     } 
     elseif ( isset($_POST['submit']) )
-    {
-        //$login = trim($_POST['username']);
+    {        
         $login = trim($_POST['email']);
 					
         // Выводим из БД запись, у которой логин равен веденному
@@ -67,9 +66,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -79,7 +76,8 @@
 	<!-- favicon -->
 	<link rel="shortcut icon" href="../favicon.png"/>
 
-    <!-- Bootstrap CSS -->    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	
     <!-- Custom CSS -->
@@ -93,7 +91,7 @@
     <![endif]-->
 
 </head>
-<body>
+<body style = "height: 100vh;">
 
 <div class="container d-flex h-100 justify-content-center align-items-center">	
     <div class="row">

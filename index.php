@@ -1,62 +1,85 @@
 <?php
 /**
+ *
  * index.php
  *
- * Created by Marat Shalmanov <1203Marat@gmail.com>
- * Copyright (c) 2016 - 2018
- * 
- */	
-	include_once "header.php";
-?>
-<!-- Header Carousel -->		
-	<header id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
-		<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-		<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>		
-		</ol>
-		
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-			  <img src="assets/img/slider/slider1.jpg" class="d-block w-100">			  
-			</div>
-			<div class="carousel-item">
-			  <img src="assets/img/slider/slider2.jpg" class="d-block w-100">			  
-			</div>
-		</div>
-		
-		<!--<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-		</a> -->
-	</header>
+ * Created by Marat Shalmanov <1203Marat@gmail.com>.
+ * Copyright (c) 05.08.2020
+ */
+
+//session_start();
+
+require 'lib/autoload.php'; //управляющая логика от COMPOSER
+
+/*if(! isset($_SESSION['auth']) && $_SERVER['REQUEST_URI'] !== '/login'){
+    header('Location: /login');
+    return;
+} */
+
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+
+    #- Переход на Главную
+    $r->addRoute('GET', '/', function () {
+		include_once 'views\home.php';
+    });
+
+    $r->addRoute('GET', '/about/', function () {
+        include_once 'views\about.php';
+    });
+
+    $r->addRoute(['GET', 'POST'], '/contact/', function () {
+        include_once 'views\contact.php';
+    });
 	
-	<div class="main">
-		<!-- .container -->
-		<div class="container">
-			
-			<div class="row">
-				<div class="col-lg-0">
-					<h1 class="page-header text-center">
-						<p>Добро пожаловать на персональный сайт-портфолио.</p>
-					</h1>
-				</div>
-				<div class="col-md-0">
-					<div class="panel panel-default">                    
-						<div class="panel-body">
-							<p class="lead">Здравствуйте я Марат Шалманов и это мой сайт-портфолио. Идея на создание персонального сайта-портфолио меня натолкнула мысль о том, что человек может все, что он захочет и его возможности безграничные.
-							Все началось в студенческие годы когда я учился по специальности информационные системы. На уроке web-технологии в то время я только начал изучать такие web-технологий как: HTML, CSS, JavaScript и многие другие. Мне пришла в голову идея создать свою страничку в интернете, где я смог бы показать всем свои таланты, разработки и достижения в моих увлечениях связанные с интернетом и программированием.</p>                     
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-		<!-- .container -->
-	</div>
-<?php
-	include_once "footer.php";
-?>
+	$r->addRoute('GET', '/dev_app/', function () {
+        include_once 'views\dev_app.php';
+    });
+	
+	$r->addRoute('GET', '/web_proj/', function () {
+        include_once 'views\web_proj.php';
+    });
+	
+    $r->addRoute(['GET', 'POST'], '/adm/', function () {
+        include_once 'adm';
+    });
+
+    $r->addRoute('GET', '/info/', function () {
+        echo phpinfo();
+    });
+});
+
+// Fetch method and URI from somewhere
+$httpMethod = $_SERVER['REQUEST_METHOD'];
+$uri = $_SERVER['REQUEST_URI'];
+
+// Strip query string (?foo=bar) and decode URI
+if (false !== $pos = strpos($uri, '?')) {
+    $uri = substr($uri, 0, $pos);
+}
+$uri = rawurldecode($uri);
+
+$routeInfo = $dispatcher->dispatch($httpMethod, $uri);
+
+switch ($routeInfo[0]) {
+    case FastRoute\Dispatcher::NOT_FOUND:
+        // ... 404 Not Found
+        include_once 'views/404.php';        
+        break;
+
+    case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+        $allowedMethods = $routeInfo[1];
+        // ... 405 Method Not Allowed
+        echo 'роут есть, а метода нет';
+        break;
+
+    case FastRoute\Dispatcher::FOUND:
+        // ... call $handler with $vars
+        $handler = $routeInfo[1];
+        $vars = $routeInfo[2];
+        $handler($vars);
+        break;
+		
+    default:
+        // ... 404 Not Found
+        include_once 'views\404.php';
+}

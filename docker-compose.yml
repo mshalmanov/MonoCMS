@@ -33,9 +33,9 @@ services:
            - "3306:3306"
         environment:
             - MYSQL_ROOT_PASSWORD=root
-            - MYSQL_DATABASE=
-            - MYSQL_USER=
-            - MYSQL_PASSWORD=
+            - MYSQL_DATABASE=u275787326_mydb
+            - MYSQL_USER=u275787326_admin
+            - MYSQL_PASSWORD=NuC*7TkPUx
         volumes:
             - ./docker_deploy/mysql/data:/var/lib/mysql
             - ./docker_deploy/log/mysql:/var/log/mysql/

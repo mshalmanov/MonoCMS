@@ -6,8 +6,8 @@
  * Copyright (c) 2016 - 2018
  * Date: 06.02.2018
  */
-include_once 'config.php';
- 
+include_once "config.php";
+
 //Определение города и старны по IP адрессу
 function getCountryFromIP() {
     $getCountry = file_get_contents('http://ip-api.com/json/' . $_SERVER['REMOTE_ADDR']);

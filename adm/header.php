@@ -10,12 +10,9 @@
     <title>Панель администратора</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">	
-	<!-- <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
-	
-    <!-- iCheck -->
-    <!-- <link href="../assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet"> -->
-	
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
     <!-- bootstrap-progressbar -->
     <!-- <link href="css/bootstrap-progressbar.min.css" rel="stylesheet"> -->
     <!-- bootstrap-daterangepicker -->
@@ -25,13 +22,13 @@
     <link href="css/custom.min.css" rel="stylesheet">
   </head>
 
-  <body class="nav-md">  
-    <div class="container body">
+  <body class="nav-md">
+  <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title">
-              <a href="" class="site_title"><i>MS</i> <span>Админ панель</span></a>
-            </div>
+          <div class="col-md-3 left_col">
+              <div class="left_col scroll-view">
+                  <div class="navbar nav_title">
+                      <a href="" class="site_title"><i>MS</i> <span>Админ панель</span></a>
+                  </div>
 
-            <div class="clearfix"></div>
+                  <div class="clearfix"></div>

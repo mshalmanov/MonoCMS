@@ -1,5 +1,7 @@
 /.idea
+composer.lock
 /backup
 /test
 /task.txt
 /themes
+/uploads

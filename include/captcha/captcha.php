@@ -3,8 +3,8 @@
 //Класс капчи
 Class Captcha{
 	
-	public $imgDir = 'include/captcha/images'; // директория где хранятся изображения
-	
+	public $imgDir = '/include/captcha/images/'; // директория где хранятся изображения
+
 	public $length = '5'; // количество цифр в капче
 	
 	public function __construct(){		
@@ -17,8 +17,8 @@ Class Captcha{
 	public function draw(){
 		$img = '';
 		foreach($this->keystring as $keystring){
-			$img .= '<img src="'.$this->imgDir.DIRECTORY_SEPARATOR.$keystring.'.gif" border="0">';
-		}		
+			$img .= '<img src="'.$this->imgDir.$keystring.'.gif" border="0">';
+		}
 		return $img;
 	}	
 	
