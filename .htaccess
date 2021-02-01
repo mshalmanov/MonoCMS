@@ -5,14 +5,20 @@ php_flag display_errors off
 # Запред на просмотр каталогов
 Options All -Indexes
 
+#Правила для маршрутизации
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
 # Перенаправление на страницу 404.php
-ErrorDocument 404 /404.php
+#ErrorDocument 404 /404.php
 
 # Скрыть расширение файла .php
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}\.php -f
+#RewriteRule ^(.*)$ $1.php
 
 # DO NOT REMOVE THIS LINE AND THE LINES BELLOW UPGRADE_INSECURE_REQUESTS:filive.tech
 Header always set Content-Security-Policy: upgrade-insecure-requests

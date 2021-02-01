@@ -20,23 +20,23 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     #- Переход на Главную
     $r->addRoute('GET', '/', function () {
-		include_once 'views\home.php';
+		include_once 'views/home.php';
     });
 
     $r->addRoute('GET', '/about/', function () {
-        include_once 'views\about.php';
+        include_once 'views/about.php';
     });
 
     $r->addRoute(['GET', 'POST'], '/contact/', function () {
-        include_once 'views\contact.php';
+        include_once 'views/contact.php';
     });
 	
 	$r->addRoute('GET', '/dev_app/', function () {
-        include_once 'views\dev_app.php';
+        include_once 'views/dev_app.php';
     });
 	
 	$r->addRoute('GET', '/web_proj/', function () {
-        include_once 'views\web_proj.php';
+        include_once 'views/web_proj.php';
     });
 	
     $r->addRoute(['GET', 'POST'], '/adm/', function () {

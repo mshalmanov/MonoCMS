@@ -28,7 +28,7 @@
 					<div class="fall-item fall-effect">
 						<img src='<?php echo $row['artic_img']; ?>'>
 						<div class="mask">
-							<h2><?php echo $row['aric_title']; ?></h2>
+							<h2><?php echo $row['artic_title']; ?></h2>
 							<p><?php echo $row['artic_description']; ?></p>
 							Дата добавления: <?php echo $row['artic_data']; ?><br /><br />	
 							<a href="<?php echo $row['artic_link']; ?>" target="_blank" class="btn btn-primary">Перейти на сайт</a>
