@@ -1,7 +1,10 @@
 /.idea
-composer.lock
+
+/AdminLTE
 /backup
 /test
 /task.txt
 /themes
 /uploads
+
+/docker_deploy/.env

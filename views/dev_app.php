@@ -17,7 +17,7 @@
 
 			<!-- Project One -->
 			<?php
-				$stmt = $db->prepare("SELECT * FROM articles WHERE section_id = 3 ORDER BY `articles`.`id` ASC;");
+				$stmt = $dbConn->prepare("SELECT * FROM articles WHERE section_id = 3 ORDER BY `articles`.`id` ASC;");
 				$stmt->execute();
 				$row = $stmt->fetch(PDO::FETCH_ASSOC);
 			?>
@@ -33,7 +33,7 @@
 				</div>
 				
 				<div class="col-md-5">
-					<h3><?php echo $row['aric_title']; ?></h3>                
+					<h3><?php echo $row['artic_title']; ?></h3>                
 					<p><?php echo $row['artic_description']; ?></br>
 					Дата добавления: <?php echo $row['artic_data']; ?></p>								
 					<a class="btn btn-primary" href="<?php echo $row['artic_link']; ?>" target="_blank">Скачать</i></a>

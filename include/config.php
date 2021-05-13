@@ -11,6 +11,10 @@
 //корневой путь к cms
 define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT'].'/');
 
+//показывать ошибки
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
 /** Настройка соединение с БД через PDO **/
 $dsn = 'mysql:host=localhost;dbname=u275787326_mydb';
 $dbUser = 'u275787326_admin';
@@ -18,9 +22,9 @@ $dbPass = 'NuC*7TkPUx';
 $dbCharset = 'utf8';
 
 try {
-    $db = new PDO($dsn, $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->exec("set names $dbCharset");	
+    $dbConn = new PDO($dsn, $dbUser, $dbPass);
+    $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbConn->exec("set names $dbCharset");
 }
 catch (PDOException $e) {
     echo 'Не удалось подключиться!</br>';

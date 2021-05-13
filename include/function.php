@@ -14,4 +14,10 @@ function getCountryFromIP() {
     $getCountryParse = json_decode ($getCountry);
     return $getCountryParse;
 }
+
+function getUsers($dbConn) {
+	$stmt = $dbConn->query('SELECT * FROM users GROUP BY id');
+	$stmt->execute();
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>

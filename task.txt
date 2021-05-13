@@ -1,7 +1,7 @@
 ﻿Проект: Сайт портфолио (Кодовое имя проекта: MonoCMS)
 Автор: Шалманов Марат
 Лицензия: GNU GPL v3. https://ru.wikipedia.org/wiki/GNU_General_Public_License
-Ссылка на сайт: http://fi.pe.hu/
+Ссылка на сайт: http://filive.ru/
 Хранилище исходников: виртуальная машина develop, https://github.com/mshalmanov/MonoCMS/ (Под ?)
 
 	Описание
@@ -10,13 +10,6 @@
 
 	Структура проекта
 / - Корневой путь проекта.
-/bootstrap/ - Папка для подключения файлов bootstrap.
-	/bootstrap/js/ - Папка для подключения JavaScript файлов bootstrap.
-		/bootstrap/js/bootstrap.bundle.min.js - Подключаемый JavaScript файл bootstrap.
-	/bootstrap/css - Папка для подключения файлов стилей.	
-		/bootstrap/css/bootstrap.min.css -	
-	/bootstrap/jquery.min.js -
-	..... Дописать	
 /adm - Папка для расположения панели управления сайтом.
 	/adm/css - Папка для расположения стилей.
 		/adm/css/style.css - Глвынй файл стилей панели управления сайтов.
@@ -26,51 +19,54 @@
 	/adm/index.php - Главный файл панели управления.
 	/adm/exit.php - Функция выхода из панели управления и удаления сесии. (Создать функцию function exit( $_SESSION() ) и перенести в файл action.php).	
 	..... Дописать
-/include -	
-	/include/img -	
-	/include/config.php -
-	..... Дописать
-/web_proj -	
-	/web_proj/img -	
-		/web_proj/img/gourmetchocolate_kz.png -	
-		/web_proj/img/firstweb_ucoz_ru -			
-	/web_proj/index.php -	
-	/web_proj/portfolio-item.php -	
-	..... Дописать
-/dev_app -
-	/dev_app/img -
-		/dev_app/img/NotepadM.jpg -
-	/dev_app/index.php -
-	..... Дописать
 /assets
+    /bootstrap/ - Папка для подключения файлов bootstrap.
+    	/bootstrap/js/ - Папка для подключения JavaScript файлов bootstrap.
+    		/bootstrap/js/bootstrap.bundle.min.js - Подключаемый JavaScript файл bootstrap.
+    	/bootstrap/css - Папка для подключения файлов стилей.
+    		/bootstrap/css/bootstrap.min.css -
+    	/bootstrap/jquery.min.js -
 	/assets/js - подключаемые библиотеки JavaScript.
 		/assets/js/lightbox.js - подключаемая библиотека JavaScript для FansyBox.
 	/assets/img - Папка для картинок и логотипа.
 		/assets/img/slider - папка с картинками слайдера на главной странице.
-			/assets/img/slider/prev.png - Иконка для пролистывания фотографии назад.
-			/assets/img/slider/next.png - Иконка для пролистывания фотографии вперед.
-			/assets/img/slider/close.png - Иконка для закрытия фотографии.
-			/assets/img/slider/loading.gif - Иконка информирующая загрузку фотографии.
-			/assets/img/slider/logo.png - Логтоип сайта.
-			/assets/img/slider/icon_top.png - Иконка для пролистывания страницы вверх.
-			/assets/img/slider/Marat.jpg - Фотография автора.
+			/assets/img/prev.png - Иконка для пролистывания фотографии назад.
+			/assets/img/next.png - Иконка для пролистывания фотографии вперед.
+			/assets/img/close.png - Иконка для закрытия фотографии.
+			/assets/img/loading.gif - Иконка информирующая загрузку фотографии.
+			/assets/img/logo.png - Логотип сайта.
+			/assets/img/icon_top.png - Иконка для пролистывания страницы вверх.
+			/assets/img/Marat.jpg - Фотография автора.
 		/assets/css - Папка где хранятся файлы стилей.
-			/assets/css/style.css -
-			/assets/css/lightbox.min.css -
-	captcha/ - Папка для хранения библиотеки captcha.
-		captcha/images - Папка с картинками проверочных цифр в captcha.
-		captcha.captcha.php - Подключаемый файл captcha.	
+			/assets/css/style.css - основные стили.
+			/assets/css/lightbox.min.css - стили для фотогалереи.
+			/assets/css/normalize.css - сбрасывание настроек стилей по умолчанию.
 	..... Дописать
-/footer.php - 
-/.htaccess - 
-/header.php -
-/404.php - Страница ошибки.
-/contact.php - Форма обратной связи.
-/about.php - 
-/index.php - Главный файл сайта.
-/sitemap.xml -
-/robots.txt -
-/robots_google.txt -
+/include -
+	/include/img -
+	        /gourmetchocolate_kz.png -
+            /firstweb_ucoz_ru -
+            /img/NotepadM.jpg -
+	/include/config.php -
+            captcha/ - Папка для хранения библиотеки captcha.
+                    captcha/images - Папка с картинками проверочных цифр в captcha.
+                    captcha.captcha.php - Подключаемый файл captcha.
+	..... Дописать
+/views
+    /dev_app.php - страница приложений
+    /web_proj.php - страница веб проектов.
+    /footer.php - подвал сайта.
+    /header.php - шапка сайта.
+    /404.php - страница ошибки.
+    /contact.php - Форма обратной связи.
+    /about.php - страница об авторе.
+    /home.php - главный файл сайта.
+/.gitattributes -
+/.gitignore - правило для игнорирования файлов в системе git
+/.htaccess -
+/sitemap.xml - карта сайта.
+/robots.txt - правила для поисковых роботов.
+/robots_google.txt - правила для поискогово робота google
 /favicon.png - иконта отображаемая в заголовке браузера.
 .... Дописать
 
@@ -83,7 +79,7 @@
 
 	Компоненты которые нужно использовать
 1. FastRoute - маршрутизатор(https://github.com/nikic/FastRoute)
-2. PhpMain	 - отправка почты ()
+2. PhpMail	 - отправка почты ()
 3. Twich     - шаблонизатор ()	
 4. Monolog   - логирование в файл ()
 5. PHPUnit   - написание модульных тестов () 
@@ -100,8 +96,8 @@
 8. Подключен плагин bootstrap версии 4.5.0 через CDN. (выполнил 07.10.2020).
 9. Обновлен плагин jquery.min.js до версии 3.5.1 в папке /assets/bootstrap/jquery.min.js. (выполнил 14.12.2020).
 10. Удален плагин font-awesome из папки /assets/bootstrap/font-awesome/ (выполнил 14.12.2020).
+11. Реализованна логика маршрутизация через библиотеку компонентов FastRoute (выполнил 29.01.2021).
 
 	Заплонированные задачи
 1. Продумать и спроектировать панель управления сайтом, которая находиться в папке /adm.
 2. Продумать форму и обработку загрузки изображений в папку upload.
-3. Написать систему маршрутизации (routing) и взять готовую библиотеку FastRoute

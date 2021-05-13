@@ -45,8 +45,8 @@ a {
   width: 40px;
   background-image: url(/assets/img/icon_top.png);
   right: 0;
-  margin-right: 50px;
-  margin-bottom: 50px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 /* 404 Page Styles */
@@ -83,15 +83,13 @@ a {
        color: #fff;
        text-align: center;
        position: relative;
-       padding: 10px;
+       #padding: 10px;
        background: rgba(0, 0, 0, 0.8);
        margin: 0 0 0 0;
     }
 	
-    .fall-item p {
-       #font-style: italic;
-       position: relative;
-       #color: #fff;
+    .fall-item p {       
+       position: relative;       
        padding: 10px 20px 20px;
        text-align: center;
     }

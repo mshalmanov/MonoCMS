@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 		$user_password = password_hash($Pwd, PASSWORD_DEFAULT);
 
 		$sql = "INSERT INTO `users`(`user_login`, `user_email`, `user_password`, `user_createDate`) VALUES(?,?,?,?)";
-		$stmt = $db->prepare($sql);
+		$stmt = $dbConn->prepare($sql);
 		$stmt->execute([ trim($_POST['userLogin']), trim($_POST['Email']), $user_password, trim(date("Y-m-d H:i:s")) ]);
 		echo "User " . $_POST['userLogin'] . " registered";
 	} else {

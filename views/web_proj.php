@@ -18,7 +18,7 @@
 			<div class="row">
 			
 				<?php
-					$stmt = $db->prepare("SELECT * FROM articles WHERE section_id = 2 ORDER BY `articles`.`id` ASC;");
+					$stmt = $dbConn->prepare("SELECT * FROM articles WHERE section_id = 2 ORDER BY `articles`.`id` ASC;");
 					$stmt->execute();
 
 					while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

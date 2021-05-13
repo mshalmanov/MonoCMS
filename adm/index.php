@@ -8,10 +8,7 @@
 
     session_start();
     include_once dirname(dirname(__FILE__)) . '/include/config.php';	
-			
-    //error_reporting(E_ALL);
-    //ini_set('display_errors', 1);
-	
+
     //Проверка на авторизацию пользователя
     if (isset($_SESSION['user_login']))
     {
@@ -23,7 +20,7 @@
         $login = trim($_POST['email']);
 					
         // Выводим из БД запись, у которой логин равен веденному
-        $stmt = $db->prepare("SELECT user_email, user_password FROM users WHERE user_email = '$login'");        
+        $stmt = $dbConn->prepare("SELECT user_email, user_password FROM users WHERE user_email = '$login'");
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
@@ -33,7 +30,7 @@
             header('Location: dashboard.php');
             exit();
 		} else {
-			echo $login_error = ('<h3 class= "alert alert-danger text-center">Не корректо введен логин или пароль!<h3>');			 
+			$login_error = ('<h3 class= "alert alert-danger text-center">Не корректо введен логин или пароль!<h3>');
 		}    
     }	
 	
@@ -48,7 +45,7 @@
         $login = trim($_POST['email']);
 					
         // Выводим из БД запись, у которой логин равен веденному
-        $stmt = $db->prepare("SELECT user_email, user_password FROM users WHERE user_email = '$login'");        
+        $stmt = $dbConn->prepare("SELECT user_email, user_password FROM users WHERE user_email = '$login'");
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
