@@ -22,7 +22,11 @@ services:
      volumes:
         - .:/var/www/html/
         - ./docker_deploy/log/php:/var/log/php/
-        
+     
+     # first load the 'mysql' service
+     depends_on:
+         - mysql   
+     
      links:
          - mysql
          
