@@ -1,6 +1,8 @@
 FROM php:7.3-fpm
 
-RUN apt-get update && apt-get install -y \
+RUN apt clear && \
+    apt update && \
+    apt install -y \
 curl \
 wget \
 git \
